@@ -26,4 +26,12 @@ object UnsafeCast {
         return obj as T
     }
      */
+    @JvmStatic
+    fun <E, T> E.cast(type: Class<T>): T {
+        return this as T
+    }
+    @JvmStatic
+    fun <T : Any, E> E.cast(type: KClass<T>): T {
+        return this as T
+    }
 }
